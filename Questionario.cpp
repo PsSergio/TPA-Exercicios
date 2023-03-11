@@ -7,7 +7,7 @@
 #include <string.h>
 using namespace std;
 void nameM (){
-	cout << "Digite o seu nome: ";
+	cout << "Digite o seu nomee: ";
 }
 void ageM (){
 	cout << "Digite sua idade: ";
