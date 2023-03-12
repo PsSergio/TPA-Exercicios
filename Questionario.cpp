@@ -59,6 +59,7 @@ int main()
 {
 	int age, resQ1, resQ2, resQ3, resQ4, resQ5;
 	string action = "confirmar", action2 = "voltar", confirm, diff, easy = "easy", medium = "medium", hard = "hard", name;
+	// INICIO >> Bloco de dados pessoais
 	nameM();
 	getline(cin, name);
 	ageM();
@@ -83,7 +84,6 @@ int main()
 			cout << "Para continuar a prova, confirme seus dados: " << name << ", " << age << " anos\nDigite 'confirmar' se deseja continuar a prova com esses dados\nDigite 'voltar' caso deseja reescrever seus dados\n";
 			cin >> confirm;
 		}
-
 		do
 		{
 			if (action2 != confirm, action != confirm)
@@ -97,13 +97,15 @@ int main()
 			}
 
 		} while (action2 == confirm, action == confirm);
-
+		// FIM >> Bloco de dados pessoais
+		// Pega de Dificuldalde
 		if (action == confirm)
 		{
 
 			cout << "Agora digite a dificuldade:\nEasy\nMedium\nHard\n";
 			cin >> diff;
-
+		
+			
 			if (diff == easy)
 			{
 				system("CLS");
@@ -118,20 +120,20 @@ int main()
 					{
 						cout << "Resposta errada novamente... Proxima questao:\n";
 						q2(resQ1);
+						cin >> resQ2;
+						if (resQ2 != 11)
+						{
+							cout << "Resposta errada, voce tem mais uma chance: ";
+							cin >> resQ2;
+							if (resQ2 != 11)
+							{
+								cout << "Resposta errada novamente... Proxima questao:\n";
+								q3(resQ2);
+							}
+						}
 					}
 				}
-				q2(resQ1);
-				cin >> resQ2;
-				if (resQ2 != 11)
-				{
-					cout << "Resposta errada, voce tem mais uma chance: ";
-					cin >> resQ2;
-					if (resQ2 != 11)
-					{
-						cout << "Resposta errada novamente... Proxima questao:\n";
-						q3(resQ2);
-					}
-				}
+
 				q3(resQ2);
 				cin >> resQ3;
 				if (resQ3 != 5)
@@ -158,21 +160,19 @@ int main()
 				}
 			}
 
-				if (diff == medium)
-				{
-					system("CLS");
-					cout << "Voce escolheu a dificuldade 'media'.\nINSTRUCOES: Ola " << name << " , nesta dificuldade, voce tem apenas uma chance para acertar a questao. Boa sorte!";
-				}
+			if (diff == medium)
+			{
+				system("CLS");
+				cout << "Voce escolheu a dificuldade 'media'.\nINSTRUCOES: Ola " << name << " , nesta dificuldade, voce tem apenas uma chance para acertar a questao. Boa sorte!";
+			}
 
-				if (diff == hard)
-				{
-					system("CLS");
-					cout << "Voce escolheu a dificuldade 'dificil'.\nINSTRUCOES: Ola " << name << " , nesta dificuldade, alem de ter apenas uma chance para acertar a questao, caso erre, reiniciara a prova inteira. Boa sorte!";
-				}
+			if (diff == hard)
+			{
+				system("CLS");
+				cout << "Voce escolheu a dificuldade 'dificil'.\nINSTRUCOES: Ola " << name << " , nesta dificuldade, alem de ter apenas uma chance para acertar a questao, caso erre, reiniciara a prova inteira. Boa sorte!";
 			}
 		}
-		while (action != confirm)
-			;
+	} while (action != confirm);
 
-		return 0;
+	return 0;
 }
