@@ -7,15 +7,49 @@
 #include <string.h>
 using namespace std;
 void nameM (){
-	cout << "Digite o seu nomee: ";
+	cout << "Digite o seu nome: ";
 }
 void ageM (){
 	cout << "Digite sua idade: ";
 }
+void q1 (){
+	cout << "Dada a equacao x = 2 + 6 . 6, qual o valor de x?\nResposta:";
+}
+void q2 (int resQ1){
 
+	if (resQ1 == 38){
+		cout << "Voce acertou! Proxima questao...\n";
+		Sleep (800);
+		cout << "Resolva: 4x = 44: ";
+	}
+}
+void q3 (int resQ2){
+	if (resQ2 == 11){
+		cout << "Voce acertou! Proxima questao...\n";
+		Sleep (800);
+		cout << "Joao quer dividir 25 laranajas com 5 amigos. Quantas laranjas cada amigo recebera, sabendo que Joao nao ficara com nenhuma fruta?\nResposta";
+	}
+		
+}
+void q4 (int resQ3){
+	if (resQ3 == 5){
+		cout << "Voce acertou! Proxima questao...\n";
+		Sleep (800);
+		cout << "Sabendo que um quadrado tem seus lados medindo 2 metros, qual eh a area do mesmo?";	
+	}
+		
+}
+void q5 (int resQ4){
+	if(resQ4 = 4){
+		cout << "Voce acertou! Ultima questao...\n";
+		Sleep (800);
+		cout << "Pedro precisa juntar 4000 reais para comprar um computador novo. Em quantos meses ele consiguira esse dinheiro ganhando uma mesada de 200 reais?\nResposta:";
+	}
+		
+}
 int main ()
 {	
-	int age;
+	int age, resQ1, resQ2, resQ3, resQ4, resQ5;
 	string action="confirmar", action2="voltar", confirm, diff, easy="easy", medium="medium", hard="hard", name;
 	nameM ();
 	getline(cin, name);
@@ -57,9 +91,29 @@ int main ()
 			if(diff == easy){
 				system ("CLS");
 				cout << "Voce escolheu a dificuldade 'facil'.\nINSTRUCOES: Ola " << name << " , nesta dificuldade, voce tem duas chances para acertar a questao. Boa sorte!";
-				
+				q1 ();
+				cin >> resQ1; 
+				if (resQ1 != 38){
+				cout << "Resposta errada, voce tem mais uma chance";
+				cin >> resQ1;
+					if (resQ1 != 38){
+						cout << "Resposta errada novamente";
+						q2 (resQ1);
+					}	
+				}
+				q2(resQ1);
+				cin >> resQ2;
+				if (resQ2 != 11){
+				cout << "Resposta errada, voce tem mais uma chance";
+				cin >> resQ2;
+					if (resQ2 != 11){
+						cout << "Resposta errada novamente";
+						q2 (resQ1);
+					}	
+				}
 			}
-			
+				
+				cin >> resQ2;
 			if(diff == medium){
 				system ("CLS");
 				cout << "Voce escolheu a dificuldade 'media'.\nINSTRUCOES: Ola " << name << " , nesta dificuldade, voce tem apenas uma chance para acertar a questao. Boa sorte!";
